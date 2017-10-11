@@ -1,0 +1,40 @@
+{
+  "name": "pantryraid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "cd client && npm run start",
+    "start": "node_modules/.bin/concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "deploy": "npm run build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "seed": "node scripts/seeds",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.11.7",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "validator": "^9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atflowers/pantryraid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atflowers/pantryraid/issues"
+  },
+  "homepage": "https://github.com/atflowers/pantryraid#readme"
+}
