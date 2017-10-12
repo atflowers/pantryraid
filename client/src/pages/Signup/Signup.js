@@ -1,7 +1,5 @@
 import React from 'react';
 import SignupForm from '../../components/SignupForm';
-import { PropTypes } from 'prop-types';
-import { connect } from 'react-redux';
 
 class SignupPage extends React.Component {
   componentDidMount() {
@@ -9,7 +7,6 @@ class SignupPage extends React.Component {
   }
 
   render() {
-    const { userSignupRequest, addFlashMessage, isUserExists } = this.props;
     return (
       <div className="row">
         <div className="col-md-4 col-md-offset-4">

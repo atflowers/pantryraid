@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const db = require("../models");
 mongoose.Promise = global.Promise;
 
-// This file empties the Books collection and inserts the books below
+// This file empties the food collection and inserts the food below
 console.log("./scripts/seeds.js - ACCESSED");
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/victualist",
+  process.env.MONGODB_URI || "mongodb://localhost/pantryraid",
   {
     useMongoClient: true
   }

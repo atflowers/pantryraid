@@ -14,6 +14,11 @@ const Nav = () =>
         <a href="/" className="navbar-brand">
           Pantry List
         </a>
+        <ul className="nav navbar-nav navbar-right">
+          <li><a href="/landing/">Landing Page</a></li>
+          <li><a href="/login/">Login</a></li>
+          <li><a href="/signup/">Signup</a></li>
+        </ul>
       </div>
     </div>
   </nav>;
