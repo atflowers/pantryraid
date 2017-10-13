@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import { FormBtn } from "../../components/Form";
+import store from "../../images/store.jpg";
+import styles from "./landing.css";
 
 class Landing extends Component {
   state = {};
@@ -26,6 +28,7 @@ class Landing extends Component {
   render() {
     return (
       <Container fluid>
+
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -41,6 +44,36 @@ class Landing extends Component {
             </Link>
           </Col>
         </Row>
+
+        <Row>
+          <Col size="md-8">
+            <div>
+              <img className="landingBanner1" src={store}/>
+            </div>
+          </Col>
+          <Col size="md-4">
+            <div>
+              <h1>something</h1>
+              <p>some more things and details</p>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="md-4">
+            <div>
+              <h1>something</h1>
+              <p>some more things and details</p>
+            </div>
+          </Col>
+          <Col size="md-8">
+            <div>
+              <img className="landingBanner1" src={store}/>
+            </div>
+          </Col>
+        </Row>
+
+
+
       </Container>
     );
   }
