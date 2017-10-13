@@ -1,6 +1,23 @@
-.landingBanner1 {
+body {
+    background-color: #ffffff !important;
+}
+
+.landingBanner {
     width: 100%;
 }
+
+.circleImage {
+    margin-top: 40px;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    border-radius: 50%;
+    width: 70%;
+}
+
+/* .bannerText {
+
+} */
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1,
 .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,

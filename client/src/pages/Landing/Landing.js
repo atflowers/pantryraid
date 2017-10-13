@@ -4,6 +4,10 @@ import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import { FormBtn } from "../../components/Form";
 import store from "../../images/store.jpg";
+import kitchen from "../../images/kitchen.jpg";
+import berries from "../../images/berries.jpg";
+import asparagus from "../../images/asparagus.jpg";
+import oranges from "../../images/oranges.jpg";
 import styles from "./landing.css";
 
 class Landing extends Component {
@@ -29,7 +33,7 @@ class Landing extends Component {
     return (
       <Container fluid>
 
-        <Row>
+        {/* <Row>
           <Col size="md-12">
             <Jumbotron>
               <h1>Welcome to the Landing Page!</h1>
@@ -43,16 +47,16 @@ class Landing extends Component {
               Return to Food page
             </Link>
           </Col>
-        </Row>
+        </Row> */}
 
         <Row>
           <Col size="md-8">
             <div>
-              <img className="landingBanner1" src={store}/>
+              <img className="landingBanner" src={store}/>
             </div>
           </Col>
           <Col size="md-4">
-            <div>
+            <div className="bannerText">
               <h1>something</h1>
               <p>some more things and details</p>
             </div>
@@ -60,14 +64,32 @@ class Landing extends Component {
         </Row>
         <Row>
           <Col size="md-4">
-            <div>
+            <div className="bannerText">
               <h1>something</h1>
               <p>some more things and details</p>
             </div>
           </Col>
           <Col size="md-8">
             <div>
-              <img className="landingBanner1" src={store}/>
+              <img className="landingBanner" src={kitchen}/>
+            </div>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col size="md-4">
+            <div>
+              <img className="circleImage" src={berries}/>
+            </div>
+          </Col>
+          <Col size="md-4">
+            <div>
+              <img className="circleImage" src={asparagus}/>
+            </div>
+          </Col>
+          <Col size="md-4">
+            <div>
+              <img className="circleImage" src={oranges}/>
             </div>
           </Col>
         </Row>
