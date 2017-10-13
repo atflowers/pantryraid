@@ -78,18 +78,27 @@ class Landing extends Component {
 
         <Row>
           <Col size="md-4">
-            <div>
+            <div className="margin">
               <img className="circleImage" src={berries}/>
+              <div className="miniText">
+                <p>words</p>
+              </div>
             </div>
           </Col>
           <Col size="md-4">
-            <div>
+            <div className="margin">
               <img className="circleImage" src={asparagus}/>
+              <div className="miniText">
+                <p>words</p>
+              </div>
             </div>
           </Col>
           <Col size="md-4">
-            <div>
+            <div className="margin">
               <img className="circleImage" src={oranges}/>
+              <div className="miniText">
+                <p>words</p>
+              </div>
             </div>
           </Col>
         </Row>
