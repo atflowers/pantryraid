@@ -15,6 +15,10 @@ body {
     border-color: #e0803a !important;
 }
 
+.nav.navbar-nav.navbar-right {
+    float: right !important;
+}
+
 .landingBanner {
     width: 100%;
 }
@@ -96,6 +100,12 @@ signUpBtn:active, signUpBtn:hover {
     height: 100px;
     background-color: #363535;
     text-align: center;
+    font-family: Gotham SSm A,Gotham SSm B,HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #C5C5C5;
+    text-decoration: none;
+    line-height: 1.5;
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1,

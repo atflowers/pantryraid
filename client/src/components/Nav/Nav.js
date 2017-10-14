@@ -16,9 +16,9 @@ const Nav = () =>
         </a>
         <ul className="nav navbar-nav navbar-right">
           <li><a href="/landing/">Landing Page</a></li>
+          <li><a href="/protected/">Protected</a></li>
           <li><a href="/login/">Login</a></li>
           <li><a href="/signup/">Signup</a></li>
-          <li><a href="/protected/">Protected</a></li>
         </ul>
       </div>
     </div>
