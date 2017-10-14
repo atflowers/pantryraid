@@ -1,0 +1,114 @@
+body {
+    background-color: #ffffff !important;
+}
+
+.navbar {
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+    background-color: #e0803a !important;
+    -webkit-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+    -moz-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+    box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+}
+
+.navbar-inverse {
+    border-color: #e0803a !important;
+}
+
+.landingBanner {
+    width: 100%;
+}
+
+.bannerText {
+     text-align: center;
+     height: 80%;
+     width: 70%;
+     margin: auto;
+     display: block;
+}
+.discrText {
+    padding-top: 40px;
+}
+
+.signUpBtn {
+    padding: 1.05rem 2.75rem;
+    color: #729c49;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 12rem;
+    border: .2rem solid #729c49;
+    -webkit-transition: color .3s,border .3s;
+    transition: color .3s,border .3s;
+    margin: auto;
+    display: block;
+    margin-top: 100px;
+}
+
+.signUpBtn:hover, .signUpBtn:hover {
+    color: #466e1e;
+    border: .2rem solid #466e1e;
+}
+
+signUpBtn:active, signUpBtn:hover {
+    color: #466e1e;
+}
+
+signUpBtn:active, signUpBtn:hover {
+    outline: 0;
+}
+
+.margin {
+    margin-top: 70px;
+}
+
+.circleImage {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    width: 60%;
+}
+
+.miniText {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.dropShadow {
+    overflow: hidden;
+    width: 100%;
+    -webkit-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+    -moz-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+    box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+}
+
+/* .bottomCont {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: #F1F1F1;
+} */
+
+.footerCont {
+    height: 100px;
+    background-color: #363535;
+    text-align: center;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1,
+.col-xs-2, .col-sm-2, .col-md-2, .col-lg-2,
+.col-xs-3, .col-sm-3, .col-md-3, .col-lg-3,
+.col-xs-4, .col-sm-4, .col-md-4, .col-lg-4,
+.col-xs-5, .col-sm-5, .col-md-5, .col-lg-5,
+.col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,
+.col-xs-7, .col-sm-7, .col-md-7, .col-lg-7,
+.col-xs-8, .col-sm-8, .col-md-8, .col-lg-8,
+.col-xs-9, .col-sm-9, .col-md-9, .col-lg-9,
+.col-xs-10, .col-sm-10, .col-md-10, .col-lg-10,
+.col-xs-11, .col-sm-11, .col-md-11, .col-lg-11,
+.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding: 0px;
+}
