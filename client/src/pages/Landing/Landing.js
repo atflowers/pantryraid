@@ -60,21 +60,22 @@ class Landing extends Component {
           <Col size="md-4">
             <div className="bannerText">
               <h1>something</h1>
-              <p>some more things and details</p>
+              <p className="discrText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               {/* change button to open modal */}
-              <form action={"/Signup/"}>
+            </div>
+              <form className="btnCont" action={"/Signup/"}>
                 <input className="signUpBtn" type="submit" value="Sign Up" />
               </form>
-            </div>
           </Col>
         </Row>
         <Row>
+          <div className="dropShadow">
           <Col size="md-4">
             <div className="bannerText">
               <h1>something</h1>
-              <p>some more things and details</p>
+              <p className="discrText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               {/* change button to open modal */}
-              <form action={"/Signup/"}>
+              <form className="btnCont" action={"/Signup/"}>
                 <input className="signUpBtn" type="submit" value="Sign Up" />
               </form>
             </div>
@@ -84,33 +85,36 @@ class Landing extends Component {
               <img className="landingBanner" src={kitchen}/>
             </div>
           </Col>
+          </div>
         </Row>
 
         <Row>
-          <Col size="md-4">
-            <div className="margin">
-              <img className="circleImage" src={berries}/>
-              <div className="miniText">
-                <p>Create Grocery Lists</p>
+          <div className="bottomCont">
+            <Col size="md-4">
+              <div className="margin">
+                <img className="circleImage" src={berries}/>
+                <div className="miniText">
+                  <p>Create Grocery Lists</p>
+                </div>
               </div>
-            </div>
-          </Col>
-          <Col size="md-4">
-            <div className="margin">
-              <img className="circleImage" src={asparagus}/>
-              <div className="miniText">
-                <p>Manage Your Pantry</p>
+            </Col>
+            <Col size="md-4">
+              <div className="margin">
+                <img className="circleImage" src={asparagus}/>
+                <div className="miniText">
+                  <p>Manage Your Pantry</p>
+                </div>
               </div>
-            </div>
-          </Col>
-          <Col size="md-4">
-            <div className="margin">
-              <img className="circleImage" src={oranges}/>
-              <div className="miniText">
-                <p>Track Expiration Dates</p>
+            </Col>
+            <Col size="md-4">
+              <div className="margin">
+                <img className="circleImage" src={oranges}/>
+                <div className="miniText">
+                  <p>Track Expiration Dates</p>
+                </div>
               </div>
-            </div>
-          </Col>
+            </Col>
+          </div>
         </Row>
 
         <Row>
@@ -120,8 +124,6 @@ class Landing extends Component {
             </div>
           </Col>
         </Row>
-
-
 
       </Container>
     );
