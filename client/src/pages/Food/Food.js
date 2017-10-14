@@ -7,6 +7,10 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, /* TextArea,  */FormBtn } from "../../components/Form";
 
+import background from "../../images/background.jpg";
+
+import styles from "./food.css";
+
 class Food extends Component {
   state = {
     food: [],
@@ -61,12 +65,15 @@ class Food extends Component {
   render() {
     return (
       <Container fluid>
+        <div className="backgroundCont">
+              <img className="backgroundImg" src={background}/>
+        </div>
         <Row>
           <Col size="md-6">
             <Jumbotron>
               <h1>Add Food</h1>
             </Jumbotron>
-            <form>
+            <form className="foodCont">
               <Input
                 value={this.state.item}
                 onChange={this.handleInputChange}
