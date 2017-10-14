@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import { FormBtn } from "../../components/Form";
+
 import store from "../../images/store.jpg";
 import kitchen from "../../images/kitchen.jpg";
 import berries from "../../images/berries.jpg";
 import asparagus from "../../images/asparagus.jpg";
 import oranges from "../../images/oranges.jpg";
+
 import styles from "./landing.css";
 
 class Landing extends Component {
@@ -59,6 +61,10 @@ class Landing extends Component {
             <div className="bannerText">
               <h1>something</h1>
               <p>some more things and details</p>
+              {/* change button to open modal */}
+              <form action={"/Signup/"}>
+                <input className="signUpBtn" type="submit" value="Sign Up" />
+              </form>
             </div>
           </Col>
         </Row>
@@ -67,6 +73,10 @@ class Landing extends Component {
             <div className="bannerText">
               <h1>something</h1>
               <p>some more things and details</p>
+              {/* change button to open modal */}
+              <form action={"/Signup/"}>
+                <input className="signUpBtn" type="submit" value="Sign Up" />
+              </form>
             </div>
           </Col>
           <Col size="md-8">
@@ -81,7 +91,7 @@ class Landing extends Component {
             <div className="margin">
               <img className="circleImage" src={berries}/>
               <div className="miniText">
-                <p>words</p>
+                <p>Create Grocery Lists</p>
               </div>
             </div>
           </Col>
@@ -89,7 +99,7 @@ class Landing extends Component {
             <div className="margin">
               <img className="circleImage" src={asparagus}/>
               <div className="miniText">
-                <p>words</p>
+                <p>Manage Your Pantry</p>
               </div>
             </div>
           </Col>
@@ -97,8 +107,16 @@ class Landing extends Component {
             <div className="margin">
               <img className="circleImage" src={oranges}/>
               <div className="miniText">
-                <p>words</p>
+                <p>Track Expiration Dates</p>
               </div>
+            </div>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col size="md-12">
+            <div className="footerCont">
+              <p>footer af</p>
             </div>
           </Col>
         </Row>
