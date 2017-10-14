@@ -116,6 +116,7 @@ class Food extends Component {
             <Jumbotron>
               <h1>In Pantry</h1>
             </Jumbotron>
+            <div className="listCont">
             {this.state.food.length ? (
               <List>
                 {this.state.food.map(food => (
@@ -132,6 +133,7 @@ class Food extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
+            </div>
           </Col>
         </Row>
       </Container>
