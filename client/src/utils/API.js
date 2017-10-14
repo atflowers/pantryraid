@@ -15,6 +15,7 @@ export default {
   },
   // Saves a food to the database
   saveFood: function(foodData) {
+    console.log(foodData);
     return axios.post("/api/food", foodData);
   }
 };

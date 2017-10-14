@@ -5,6 +5,7 @@ import Landing from "./pages/Landing";
 import Detail from "./pages/Detail";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Protected from "./pages/Protected";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import NewEventPage from './components/events/NewEventPage';
@@ -21,6 +22,7 @@ const App = () =>
         <Route exact path="/landing" component={Landing} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/protected" component={Protected} />
         <Route exact path="/new-event" component={requireAuth(NewEventPage)} />
         <Route component={NoMatch} />
       </Switch>

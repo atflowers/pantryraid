@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, /* TextArea,  */FormBtn } from "../../components/Form";
-
 import background from "../../images/background.jpg";
-
 import styles from "./food.css";
 
 class Food extends Component {
@@ -66,7 +64,7 @@ class Food extends Component {
     return (
       <Container fluid>
         <div className="backgroundCont">
-              <img className="backgroundImg" src={background}/>
+          <img className="backgroundImg" alt="backgroundImg" src={background}/>
         </div>
         <Row>
           <Col size="md-6">
@@ -117,22 +115,22 @@ class Food extends Component {
               <h1>In Pantry</h1>
             </Jumbotron>
             <div className="listCont">
-            {this.state.food.length ? (
-              <List>
-                {this.state.food.map(food => (
-                  <ListItem key={food._id}>
-                    <Link to={"/food/" + food._id}>
-                      <strong>
-                        {food.item} in the amount of {food.quantity} {food.units}, expires on {food.expires}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteFood(food._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+              {this.state.food.length ? (
+                <List>
+                  {this.state.food.map(food => (
+                    <ListItem key={food._id}>
+                      <Link to={"/food/" + food._id}>
+                        <strong>
+                          {food.item} in the amount of {food.quantity} {food.units}, expires on {food.expires}
+                        </strong>
+                      </Link>
+                      <DeleteBtn onClick={() => this.deleteFood(food._id)} />
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
             </div>
           </Col>
         </Row>

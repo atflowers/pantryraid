@@ -1,14 +1,12 @@
 import React from 'react';
-import { Redirect } from "react-router-dom";
-import axios from 'axios';
-// import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 import timezones from '../../data/timezones';
 import map from 'lodash/map';
 import classnames from 'classnames';
 import validateInput from '../../validations/signup';
 import TextFieldGroup from '../Form/TextFieldGroup';
 import signUp from '../../utils/signupActions';
-// import flashM from '../../utils/flashMessages';
+import flashM from '../../utils/flashMessages';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -21,7 +19,6 @@ class SignupForm extends React.Component {
       timezone: '',
       errors: {},
       isLoading: false,
-      isLoggedIn: false,
       invalid: false
     }
 
@@ -32,14 +29,6 @@ class SignupForm extends React.Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    // console.log("Changing '",e.target.name,"' to: ", e.target.value);
-    if (e.target.name === "username" && e.target.name === "") {
-      // Check if username exists in the database
-      // this.checkUserExists(e);
-    }
-    if (e.target.name === "email" && e.target.name === "") {
-      // Check if email exists in the database
-    }
   }
 
   isValid() {
@@ -77,64 +66,29 @@ class SignupForm extends React.Component {
 
     if (this.isValid()) {
       this.setState({ errors: {}, isLoading: true });
-
-      axios({
-        method: 'post',
-        url: '/api/signup',
-        data: {
-          username: this.state.username,
-          email: this.state.email,
-          password: this.state.password,
-          timezone: this.state.timezone
-        }
-      }).then(response => {
-          // store the token in local storage so we can include it later!
-          localStorage.setItem('token', response.data.token)
-          console.log(response);
-      }).then(()=>{
-          const token = localStorage.getItem('token');
-          console.log(token);
-          // we're using this to make a special object so we can
-          // set the request
-          var instance = axios.create({
-              headers: {'Authorization': `Bearer ${token}`}
+      // console.log("Here is this.props.userSignupRequest:");
+      // console.log(this.props.userSignupRequest);
+      // console.log(this.state);
+      // this.props.userSignupRequest(this.state).then(
+      signUp.userSignupRequest(this.state).then(
+        () => {
+          // this.props.addFlashMessage({
+          flashM.addFlashMessage({
+            type: 'success',
+            text: 'You signed up successfully. Welcome!'
           });
-          // This makes a call to the server with our custom token and then
-          // we display log the token to the console. /api/users is a protected
-          // route and we can test this in postman to confirm whether or not
-          // we need a token!
-          // instance.get('/api/users')
-          instance.get('/api/login')
-              .then( response => {
-                  // console.log(response.data);
-                  // return (<Redirect to={{pathname: '/offshoot'}}/>);
-                  // console.log(this.state);
-                  this.setState({ isLoggedIn: true })
-              })
-              .catch(err => 
-                  console.log(err)
-              );
-          // instance.get('/offshoot').then(response=>console.log(response.data)).catch(err=>console.log(err));
-          
-      })
-      .catch(error=> {
-          console.log('Something happened', error)
-      });
+          this.context.router.history.push('/');
+        },
+        (err) => this.setState({ errors: err.response.data, isLoading: false })
+      );
     }
   }
 
   render() {
-    const { errors, isLoggedIn } = this.state;
+    const { errors } = this.state;
     const options = map(timezones, (val, key) =>
       <option key={val} value={val}>{key}</option>
     );
-
-    if (isLoggedIn) {
-      return (
-        <Redirect to='/food' />
-      )
-    }
-
     return (
       <form onSubmit={this.onSubmit}>
         <h1>Sign up now and become a pantry raider!</h1>
@@ -199,14 +153,14 @@ class SignupForm extends React.Component {
   }
 }
 
-// SignupForm.propTypes = {
-//   userSignupRequest: PropTypes.func.isRequired,
-//   addFlashMessage: PropTypes.func.isRequired,
-//   isUserExists: PropTypes.func.isRequired
-// }
+SignupForm.propTypes = {
+  userSignupRequest: PropTypes.func.isRequired,
+  addFlashMessage: PropTypes.func.isRequired,
+  isUserExists: PropTypes.func.isRequired
+}
 
-// SignupForm.contextTypes = {
-//   router: PropTypes.object.isRequired
-// }
+SignupForm.contextTypes = {
+  router: PropTypes.object.isRequired
+}
 
 export default SignupForm;

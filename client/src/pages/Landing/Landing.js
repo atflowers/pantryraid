@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
-import { FormBtn } from "../../components/Form";
 
 import store from "../../images/store.jpg";
 import kitchen from "../../images/kitchen.jpg";
@@ -54,7 +51,7 @@ class Landing extends Component {
         <Row>
           <Col size="md-8">
             <div>
-              <img className="landingBanner" src={store}/>
+              <img className="landingBanner" alt="landingBanner" src={store}/>
             </div>
           </Col>
           <Col size="md-4">
@@ -82,7 +79,7 @@ class Landing extends Component {
           </Col>
           <Col size="md-8">
             <div>
-              <img className="landingBanner" src={kitchen}/>
+              <img className="landingBanner" alt="landingBanner" src={kitchen}/>
             </div>
           </Col>
           </div>
@@ -92,7 +89,7 @@ class Landing extends Component {
           <div className="bottomCont">
             <Col size="md-4">
               <div className="margin">
-                <img className="circleImage" src={berries}/>
+                <img className="circleImage" alt="circleImage Berries" src={berries}/>
                 <div className="miniText">
                   <p>Create Grocery Lists</p>
                 </div>
@@ -100,7 +97,7 @@ class Landing extends Component {
             </Col>
             <Col size="md-4">
               <div className="margin">
-                <img className="circleImage" src={asparagus}/>
+                <img className="circleImage" alt="circleImage Asparagus" src={asparagus}/>
                 <div className="miniText">
                   <p>Manage Your Pantry</p>
                 </div>
@@ -108,7 +105,7 @@ class Landing extends Component {
             </Col>
             <Col size="md-4">
               <div className="margin">
-                <img className="circleImage" src={oranges}/>
+                <img className="circleImage" alt="circleImage Oranges" src={oranges}/>
                 <div className="miniText">
                   <p>Track Expiration Dates</p>
                 </div>

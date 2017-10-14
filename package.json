@@ -1,5 +1,5 @@
 {
-  "name": "pantryraid",
+  "name": "mern",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -22,19 +22,12 @@
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.4",
     "mongoose": "^4.11.7",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "validator": "^9.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/atflowers/pantryraid.git"
-  },
-  "bugs": {
-    "url": "https://github.com/atflowers/pantryraid/issues"
-  },
-  "homepage": "https://github.com/atflowers/pantryraid#readme"
+  }
 }
