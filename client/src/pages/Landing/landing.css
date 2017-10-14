@@ -2,17 +2,45 @@ body {
     background-color: #ffffff !important;
 }
 
+.navStyle {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: #e0803a !important;
+    height: 60px;
+}
+
 .navbar {
     margin-bottom: 0 !important;
     border-radius: 0 !important;
     background-color: #e0803a !important;
-    -webkit-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
-    -moz-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
-    box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+    -webkit-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.39);
+    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.39);
+    border: none !important;
 }
 
 .navbar-inverse {
-    border-color: #e0803a !important;
+    border-color: 0 !important;
+}
+
+.navbar-brand:hover {
+    background-color: #729c49 !important;
+}
+
+.nav.navbar-nav.navbar-right {
+    margin: 0;
+    top: 0;
+    right: 60px;
+    bottom: 20px;
+    left: auto;
+    position: fixed;
+    z-index: 10;
+}
+
+.offSetRow {
+    overflow: hidden;
+    margin-top: 60px;
 }
 
 .landingBanner {
@@ -80,9 +108,9 @@ signUpBtn:active, signUpBtn:hover {
 .dropShadow {
     overflow: hidden;
     width: 100%;
-    -webkit-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
-    -moz-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
-    box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+    -webkit-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.26);
+    box-shadow: 0px 3px 18px 1px rgba(0,0,0,0.26);
 }
 
 /* .bottomCont {
@@ -94,8 +122,15 @@ signUpBtn:active, signUpBtn:hover {
 
 .footerCont {
     height: 100px;
+    padding-top: 20px;
     background-color: #363535;
     text-align: center;
+    font-family: Gotham SSm A,Gotham SSm B,HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: #C5C5C5;
+    text-decoration: none;
+    line-height: 1.5;
 }
 
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1,
