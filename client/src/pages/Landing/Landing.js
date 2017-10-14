@@ -47,7 +47,9 @@ class Landing extends Component {
             </Link>
           </Col>
         </Row> */}
-
+        <Row>
+          <div className="offSetRow"></div>
+        </Row>
         <Row>
           <Col size="md-8">
             <div>

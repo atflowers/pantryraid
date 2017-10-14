@@ -3,6 +3,7 @@ import React from "react";
 const navColor = {backgroundColor: '#F16E10'};
 
 const Nav = () =>
+<div className="navStyle">
   <nav className="navbar navbar-inverse navbar-top navbar-custom" style={navColor}>
     <div className="container-fluid">
       <div className="navbar-header">
@@ -22,6 +23,7 @@ const Nav = () =>
         </ul>
       </div>
     </div>
-  </nav>;
+  </nav>
+  </div>;
 
 export default Nav;

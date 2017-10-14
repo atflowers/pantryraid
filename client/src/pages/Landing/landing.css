@@ -2,6 +2,14 @@ body {
     background-color: #ffffff !important;
 }
 
+.navStyle {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: #e0803a !important;
+    height: 60px;
+}
+
 .navbar {
     margin-bottom: 0 !important;
     border-radius: 0 !important;
@@ -16,7 +24,18 @@ body {
 }
 
 .nav.navbar-nav.navbar-right {
-    float: right !important;
+    margin: 0;
+    top: 0;
+    right: 60px;
+    bottom: 20px;
+    left: auto;
+    position: fixed;
+    z-index: 10;
+}
+
+.offSetRow {
+    overflow: hidden;
+    margin-top: 60px;
 }
 
 .landingBanner {
