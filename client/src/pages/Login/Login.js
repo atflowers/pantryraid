@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Nav from "../../components/Nav";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { LoginForm } from "../../components/LoginForm";
@@ -10,13 +11,16 @@ class Login extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-          <Col size="md-4 md-offset-4">
-            <LoginForm />
-          </Col>
-        </Row>
-      </Container>
+      <div>
+        <Nav />
+        <Container fluid>
+          <Row>
+            <Col size="md-4 md-offset-4">
+              <LoginForm />
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }

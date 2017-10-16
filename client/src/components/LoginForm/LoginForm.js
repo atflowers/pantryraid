@@ -20,6 +20,7 @@ export class LoginForm extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+    console.log("Login submit was pressed.");
     axios({
       method: 'post',
       url: '/api/login',
@@ -29,11 +30,18 @@ export class LoginForm extends Component {
       }
     }).then(response => {
         // store the token in local storage so we can include it later!
-        localStorage.setItem('token', response.data.token)
-        // console.log(response);
+        const uID = response.data.data[0]._id;
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('userID', uID);
+        localStorage.setItem('userName', response.data.data[0].username);
+        // console.log("LoginForm response.data.data[0]._id", response.data.data[0]._id);
+        
+        // const nuID = localStorage.getItem('userID');
+        // console.log("nuID",nuID);
+        this.setState({userID : response.data.data[0]._id});
     }).then(()=>{
         const token = localStorage.getItem('token');
-        console.log(token);
+        console.log("Logged in with TOKEN:",token);
         // we're using this to make a special object so we can
         // set the request
         var instance = axios.create({
@@ -46,9 +54,10 @@ export class LoginForm extends Component {
         // instance.get('/api/users')
         instance.get('/api/login')
             .then( response => {
-                // console.log(response.data);
+                // console.log("instance.get - response data: ", response);
+                console.log("LogininForm.js - instance.get - response.config.headers.Authorization: ", response.config.headers.Authorization);
                 // return (<Redirect to={{pathname: '/offshoot'}}/>);
-                // console.log(this.state);
+                console.log("Setting isLoggedIn to true.");
                 this.setState({ isLoggedIn: true })
             })
             .catch(err => 
@@ -68,10 +77,12 @@ export class LoginForm extends Component {
 
   render() {
     const {isLoading, isLoggedIn} = this.state;
+    console.log("LoginForm.js this.state.userID", this.state.userID);
 
     if (isLoggedIn) {
+      console.log("this.state.userID ", this.state.userID);
       return (
-        <Redirect to='/food' />
+        <Redirect to={'/user/' + this.state.userID} />
       )
     }
 

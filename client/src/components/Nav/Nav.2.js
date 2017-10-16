@@ -5,25 +5,30 @@ const navColor = {backgroundColor: '#F16E10'};
 
 // const Nav = () =>
 export default class Nav extends React.Component {
+  state = {isLoggedOut: false};
+
+  componentDidMount() {
+    const token = localStorage.getItem('token');
+    console.log("Nav TOKEN:",token);
+    if (token == null) {
+      console.log("The token is NULL");
+      this.setState({ isLoggedOut: true })
+    }
+  }
 
   logOut = () => {
     console.log("Logging out...");
     localStorage.removeItem('token');
-    localStorage.removeItem('userID');
-    localStorage.removeItem('userName');
   };
 
   render() {
-    const userID = localStorage.getItem('userID');
-    const userName = localStorage.getItem('userName');
-    // console.log("Nav userID",userID);
-    // console.log("Nav props", typeof this.props.welcomeName);
-    // console.log("Nav localStorage:",localStorage);
-    // console.log("Nav this.props.userID",this.props.userID);
+    const {isLoggedOut} = this.state;
+    console.log("Nav props", typeof this.props.welcomeName);
+    console.log("isLoggedOut",isLoggedOut);
 
-    if (userID !== null) {
+    if (typeof this.props.welcomeName !== "undefined" || !isLoggedOut) {
       return (
-        <nav className="navbar navbar-inverse navbar-top navbar-custom" id="TOP" style={navColor}>
+        <nav className="navbar navbar-inverse navbar-top navbar-custom" style={navColor}>
           <div className="container-fluid">
             <div className="navbar-header">
               <button type="button" className="collapsed navbar-toggle">
@@ -37,7 +42,7 @@ export default class Nav extends React.Component {
             </div>
             <div className="collapse navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
-                <li><a href={"/user/" + userID} >Welcome, <strong>{userName}</strong></a></li>
+                <li><a href="/">Welcome, <strong>{this.props.welcomeName}</strong></a></li>
                 <li><a href="/" onClick={this.logOut}>Logout</a></li>
               </ul>
             </div>

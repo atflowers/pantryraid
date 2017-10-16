@@ -2,9 +2,9 @@ import React from 'react';
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
 // import { PropTypes } from 'prop-types';
-import timezones from '../../data/timezones';
-import map from 'lodash/map';
-import classnames from 'classnames';
+// import timezones from '../../data/timezones';
+// import map from 'lodash/map';
+// import classnames from 'classnames';
 import validateInput from '../../validations/signup';
 import TextFieldGroup from '../Form/TextFieldGroup';
 import signUp from '../../utils/signupActions';
@@ -18,7 +18,7 @@ class SignupForm extends React.Component {
       email: '',
       password: '',
       passwordConfirmation: '',
-      timezone: '',
+      // timezone: '',
       errors: {},
       isLoading: false,
       isLoggedIn: false,
@@ -84,16 +84,20 @@ class SignupForm extends React.Component {
         data: {
           username: this.state.username,
           email: this.state.email,
-          password: this.state.password,
-          timezone: this.state.timezone
+          password: this.state.password
+          // timezone: this.state.timezone
         }
       }).then(response => {
           // store the token in local storage so we can include it later!
-          localStorage.setItem('token', response.data.token)
-          console.log(response);
+          localStorage.setItem('token', response.data.token);
+          // console.log("SignupForm userID", response.data);
+          localStorage.setItem('userID', response.data.data._id);
+          localStorage.setItem('userName', response.data.data.username);
+          console.log("response",response);
+          console.log("localStorage",localStorage);
       }).then(()=>{
           const token = localStorage.getItem('token');
-          console.log(token);
+          // console.log(token);
           // we're using this to make a special object so we can
           // set the request
           var instance = axios.create({
@@ -125,13 +129,13 @@ class SignupForm extends React.Component {
 
   render() {
     const { errors, isLoggedIn } = this.state;
-    const options = map(timezones, (val, key) =>
-      <option key={val} value={val}>{key}</option>
-    );
+    // const options = map(timezones, (val, key) =>
+    //   <option key={val} value={val}>{key}</option>
+    // );
 
     if (isLoggedIn) {
       return (
-        <Redirect to='/food' />
+        <Redirect to={'/user/' + localStorage.getItem('userID')} />
       )
     }
 
@@ -143,7 +147,7 @@ class SignupForm extends React.Component {
           error={errors.username}
           label="Username"
           onChange={this.onChange}
-          checkUserExists={this.checkUserExists}
+          //checkUserExists={this.checkUserExists}
           value={this.state.username}
           field="username"
         />
@@ -152,7 +156,7 @@ class SignupForm extends React.Component {
           error={errors.email}
           label="Email"
           onChange={this.onChange}
-          checkUserExists={this.checkUserExists}
+          //checkUserExists={this.checkUserExists}
           value={this.state.email}
           field="email"
         />
@@ -175,7 +179,7 @@ class SignupForm extends React.Component {
           type="password"
         />
 
-        <div className={classnames("form-group", { 'has-error': errors.timezone })}>
+        {/* <div className={classnames("form-group", { 'has-error': errors.timezone })}>
           <label className="control-label">Timezone</label>
           <select
             className="form-control"
@@ -187,7 +191,7 @@ class SignupForm extends React.Component {
             {options}
           </select>
           {errors.timezone && <span className="help-block">{errors.timezone}</span>}
-        </div>
+        </div> */}
 
         <div className="form-group">
           <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-primary btn-lg">

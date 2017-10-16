@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from "../../components/Nav";
 import SignupForm from '../../components/SignupForm';
 
 class SignupPage extends React.Component {
@@ -8,9 +9,12 @@ class SignupPage extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-md-4 col-md-offset-4">
-          <SignupForm />
+      <div>
+        <Nav />
+        <div className="row">
+          <div className="col-md-4 col-md-offset-4">
+            <SignupForm />
+          </div>
         </div>
       </div>
     );

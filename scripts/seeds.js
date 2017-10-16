@@ -15,44 +15,192 @@ mongoose.connect(
     err => { console.log("Mongo server connection error: " + err); }
 );
 
-const foodSeed = [
+const expirationSeed = [
   {
-    item: "Apple",
-    category: "Fruit",
-    quantity: 3,
-    units: "each",
-    date: new Date(Date.now()),
-    expires: new Date(+new Date() + 7*24*60*60*1000)
+    item: "peach",
+    category: "fruit",
+    package: "canned",
+    storage: "pantry",
+    opened: false,
+    cooked: false,
+    life: 365
   },
   {
-    item: "Orange",
-    category: "Fruit",
-    quantity: 8,
-    units: "each",
-    date: new Date(Date.now()),
-    expires: new Date(+new Date() + 7*24*60*60*1000)
+    item: "pea",
+    category: "vegetable",
+    package: "bag",
+    storage: "freezer",
+    opened: false,
+    cooked: false,
+    life: 180
   },
   {
-    item: "Ribs",
-    category: "Meat",
-    quantity: 16,
-    units: "each",
-    date: new Date(Date.now()),
-    expires: new Date(+new Date() + 7*24*60*60*1000)
+    item: "beef ribs",
+    category: "meat",
+    package: "none",
+    storage: "refrigerator",
+    opened: true,
+    cooked: false,
+    life: 5
   },
   {
-    item: "Rice",
-    category: "Grain",
-    quantity: 2.5,
-    units: "lb",
-    date: new Date(Date.now()),
-    expires: new Date(+new Date() + 7*24*60*60*1000)
+    item: "bacon",
+    category: "meat",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 14
+  },
+  {
+    item: "chicken",
+    category: "poultry",
+    package: "plastic",
+    storage: "refridgerator",
+    opened: false,
+    cooked: false,
+    life: 2
+  },
+  {
+    item: "apple",
+    category: "fruit",
+    package: "none",
+    storage: "refridgerator",
+    opened: false,
+    cooked: false,
+    life: 30
+  },
+  {
+    item: "cream cheese",
+    category: "dairy",
+    package: "plastic",
+    storage: "refridgerator",
+    opened: true,
+    cooked: false,
+    life: 14
+  },
+  {
+    item: "deli turkey",
+    category: "meat",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: true,
+    cooked: false,
+    life: 5
+  },
+  {
+    item: "celery",
+    category: "vegetable",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 21
+  },
+  {
+    item: "hummus",
+    category: "snack",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 10
+  },
+  {
+    item: "eggs",
+    category: "dairy",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 21
+  },
+  {
+    item: "ice cream",
+    category: "dairy",
+    package: "carton",
+    storage: "freezer",
+    opened: false,
+    cooked: false,
+    life: 60
+  },
+  {
+    item: "shrimp",
+    category: "meat",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: true,
+    cooked: false,
+    life: 4
+  },
+  {
+    item: "frozen vegetables",
+    category: "vegetables",
+    package: "plastic",
+    storage: "freezer",
+    opened: false,
+    cooked: false,
+    life: 300
+  },
+  {
+    item: "lettuce",
+    category: "vegetable",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 10
+  },
+  {
+    item: "onions",
+    category: "vegetable",
+    package: "plastic",
+    storage: "countertop",
+    opened: false,
+    cooked: false,
+    life: 42
+  },
+  {
+    item: "dry salami",
+    category: "meat",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 30
+  },
+  {
+    item: "ground turkey",
+    category: "meat",
+    package: "plastic",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 2
+  },
+  {
+    item: "grapes",
+    category: "fruit",
+    package: "glass",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 10
+  },
+  {
+    item: "lemons",
+    category: "fruit",
+    package: "none",
+    storage: "refrigerator",
+    opened: false,
+    cooked: false,
+    life: 45
   }
 ];
 
 db.Food
   .remove({})
-  .then(() => db.Food.collection.insertMany(foodSeed))
+  .then(() => db.Expiration.collection.insertMany(expirationSeed))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);

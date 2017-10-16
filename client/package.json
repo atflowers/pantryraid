@@ -4,8 +4,10 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "array-sort": "^0.1.4",
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
+    "date-format-lite": "^17.7.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",

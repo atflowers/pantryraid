@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
+import userData from "../../utils/userData";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, /* TextArea,  */FormBtn } from "../../components/Form";
 import background from "../../images/background.jpg";
-// import styles from "./food.css";
-require("./food.css");
+import styles from "./User.css";
 
 class Food extends Component {
   state = {
@@ -26,7 +25,7 @@ class Food extends Component {
   }
 
   loadFood = () => {
-    API.getAllFood()
+    userData.getAllFood()
       .then(res =>
         this.setState({ food: res.data, item: "", category: "", quantity: "", units: "", expires: "" })
       )
@@ -34,7 +33,7 @@ class Food extends Component {
   };
 
   deleteFood = id => {
-    API.deleteFood(id)
+    userData.deleteFood(id)
       .then(res => this.loadFood())
       .catch(err => console.log(err));
   };
@@ -49,7 +48,7 @@ class Food extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.item && this.state.quantity && this.state.units) {
-      API.saveFood({
+      userData.saveFood({
         item: this.state.item,
         category: this.state.category,
         quantity: this.state.quantity,

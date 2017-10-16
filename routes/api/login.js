@@ -10,6 +10,6 @@ router.route("/")
     // console.log(req.body);
     next();
     })
-    .post( userController.checkRecords )
+    .post( userController.loginAuth )
 
 module.exports = router;
