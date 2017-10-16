@@ -60,8 +60,10 @@ class Landing extends Component {
             </Col>
             <Col size="md-4">
               <div className="bannerText">
-                <h1>something</h1>
-                <p className="discrText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h1>Track expiration dates</h1>
+                <p className="discrText">Tired of throwing out unused groceries because you missed the expiration date? Stop the madness with Pantry Raid!</p> 
+                    <p>Keep track of your grocery expiration dates and the contents of your fridge and pantry with this handy app app. Tick through your grocery list 
+                    as you shop and Pantry Raid will automatically add the item and its expiration date to your inventory list. </p>
                 {/* change button to open modal */}
               </div>
                 <form className="btnCont" action={"/Signup/"}>
@@ -73,8 +75,10 @@ class Landing extends Component {
             <div className="dropShadow">
             <Col size="md-4">
               <div className="bannerText">
-                <h1>something</h1>
-                <p className="discrText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h1>Save money and time</h1>
+                <p className="discrText">Pantry Raid will save you money by helping you avoid dreaded food spoilage. But that's not the only benefit. </p> 
+                    <p>Pantry Raid will also stop you from rebuying groceries you already have at home, but don't remember having on hand when at the store. You'll also be free from digging through the 
+                    fridge or pantry for that recipe item you think you might have, but just aren't sure if its been eaten or tossed out. </p>
                 {/* change button to open modal */}
                 <form className="btnCont" action={"/Signup/"}>
                   <input className="signUpBtn" type="submit" value="Sign Up" />
