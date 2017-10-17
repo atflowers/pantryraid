@@ -89,8 +89,7 @@ export class LoginForm extends Component {
     }
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <h1>Login</h1>
+      <form className="loginForm" onSubmit={this.onSubmit}>
         <Input
           label="Username / Email"
           name = "username"

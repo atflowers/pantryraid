@@ -1,6 +1,9 @@
 import React from 'react';
 import Nav from "../../components/Nav";
 import SignupForm from '../../components/SignupForm';
+import formback from "../../images/formback.jpg";
+
+require("./signup.css");
 
 class SignupPage extends React.Component {
   componentDidMount() {
@@ -11,7 +14,10 @@ class SignupPage extends React.Component {
     return (
       <div>
         <Nav />
-        <div className="row">
+        <div className="formbackCont">
+          <img className="formbackImg" alt="backgroundImg" src={formback}/>
+        </div>
+        <div className="row" id="rowId">
           <div className="col-md-4 col-md-offset-4">
             <SignupForm />
           </div>
