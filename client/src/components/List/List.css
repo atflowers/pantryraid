@@ -1,5 +1,6 @@
 .list-overflow-container {
   max-height: 545px;
+  border-radius: 4px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -24,10 +25,8 @@
 
 .list-overflow-container li:first-child {
   border-top: none;
-  border-radius: 6px 0 0 0;
 }
 
 .list-overflow-container li:last-child {
   border-bottom: none;
-  border-radius: 0 0 0 6px;
 }
