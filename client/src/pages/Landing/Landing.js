@@ -36,22 +36,6 @@ class Landing extends Component {
         <Nav />
         <Container fluid>
 
-          {/* <Row>
-            <Col size="md-12">
-              <Jumbotron>
-                <h1>Welcome to the Landing Page!</h1>
-              </Jumbotron>
-              <form>
-                <FormBtn onClick={this.handleFormSubmit}>
-                  Submit Button
-                </FormBtn>
-              </form>
-              <Link to={"/Food/"}>
-                Return to Food page
-              </Link>
-            </Col>
-          </Row> */}
-
           <Row>
             <Col size="md-8">
               <div>
@@ -60,11 +44,12 @@ class Landing extends Component {
             </Col>
             <Col size="md-4">
               <div className="bannerText">
-                <h1>Track expiration dates</h1>
-                <p className="discrText">Tired of throwing out unused groceries because you missed the expiration date? Stop the madness with Pantry Raid!</p> 
-                    <p>Keep track of your grocery expiration dates and the contents of your fridge and pantry with this handy app app. Tick through your grocery list 
-                    as you shop and Pantry Raid will automatically add the item and its expiration date to your inventory list. </p>
-                {/* change button to open modal */}
+                <h1 className="discrHeader">Track expiration dates</h1>
+                <div className="discrText">
+                  <p>Tired of throwing out unused groceries because you missed the expiration date? Stop the madness with Pantry Raid!</p> 
+                  <p>Keep track of your grocery expiration dates and the contents of your fridge and pantry with this handy app app. Tick through your grocery list 
+                      as you shop and Pantry Raid will automatically add the item and its expiration date to your inventory list. </p>
+                </div>
               </div>
                 <form className="btnCont" action={"/Signup/"}>
                   <input className="signUpBtn" type="submit" value="Sign Up" />
@@ -75,11 +60,13 @@ class Landing extends Component {
             <div className="dropShadow">
             <Col size="md-4">
               <div className="bannerText">
-                <h1>Save money and time</h1>
-                <p className="discrText">Pantry Raid will save you money by helping you avoid dreaded food spoilage. But that's not the only benefit. </p> 
-                    <p>Pantry Raid will also stop you from rebuying groceries you already have at home, but don't remember having on hand when at the store. You'll also be free from digging through the 
-                    fridge or pantry for that recipe item you think you might have, but just aren't sure if its been eaten or tossed out. </p>
-                {/* change button to open modal */}
+                <h1 className="discrHeader">Save money and time</h1>
+                <div className="discrText">
+                  <p>Pantry Raid will save you money by helping you avoid dreaded food spoilage. But that's not the only benefit. </p> 
+                  <p>Pantry Raid will also stop you from rebuying groceries you already have at home, but don't remember having on hand when at the store. You'll also be free from digging through the 
+                      fridge or pantry for that recipe item you think you might have, but just aren't sure if its been eaten or tossed out. </p>
+                </div>
+                {/* change button to open modal? */}
                 <form className="btnCont" action={"/Signup/"}>
                   <input className="signUpBtn" type="submit" value="Sign Up" />
                 </form>

@@ -70,7 +70,7 @@ class Food extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add Food</h1>
+              <h1>ADD FOOD</h1>
             </Jumbotron>
             <form className="foodCont">
               <Input
@@ -113,7 +113,7 @@ class Food extends Component {
           </Col>
           <Col size="md-6">
             <Jumbotron>
-              <h1>In Pantry</h1>
+              <h1>IN PANTRY</h1>
             </Jumbotron>
             <div className="listCont">
               {this.state.food.length ? (

@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom";
 import axios from 'axios';
 import { Input } from "../Form";
 
+require("./loginForm.css");
+
 export class LoginForm extends Component {
   constructor(props) {
     super(props);

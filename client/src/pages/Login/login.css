@@ -1,0 +1,12 @@
+.formbackCont {
+    width: 100%;
+    position: fixed;
+    margin-left: 0 !important;
+    background-color: #9C9C9C;
+}
+
+.formbackImg {
+    max-width:100%; 
+    max-height:100%;
+    opacity: 0.7;
+}
