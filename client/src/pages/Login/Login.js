@@ -3,6 +3,9 @@ import Nav from "../../components/Nav";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { LoginForm } from "../../components/LoginForm";
+import formback from "../../images/formback.jpg";
+
+require("./login.css");
 
 class Login extends Component {
   componentDidMount() {
@@ -13,6 +16,9 @@ class Login extends Component {
     return (
       <div>
         <Nav />
+        <div className="formbackCont">
+          <img className="formbackImg" alt="backgroundImg" src={formback}/>
+      </div>
         <Container fluid>
           <Row>
             <Col size="md-4 md-offset-4">

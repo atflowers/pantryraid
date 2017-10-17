@@ -1,0 +1,25 @@
+.btn.btn-primary.btn-lrg {
+    opacity: 1.0;
+    float: none !important;
+    margin: auto;
+    display: block;
+    padding: 1.05rem 2.75rem;
+    color: #ffffff;
+    background-color: #729c49;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "News Cycle","Arial Narrow Bold",sans-serif;
+    text-transform: uppercase;
+    border-radius: 12rem;
+    border: .2rem solid #729c49;
+    -webkit-transition: color .3s,border .3s;
+    transition: color .3s,border .3s;
+    display: block;
+    width: 30%;
+}
+
+.btn.btn-primary.btn-lrg:hover {
+    color: #ffffff;
+    border: .2rem solid #729c49;
+    background-color: rgba(115, 156, 73, 0.58);
+}
