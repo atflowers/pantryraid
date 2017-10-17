@@ -86,7 +86,7 @@ module.exports = {
     // console.log("userController.js token: ",urlID);
     // const decoded = jwt.verify(token, secret_key);
     // console.log("decoded:",decoded);
-    // console.log("req.token.data.sub",req.token.data.sub);
+    console.log("req.token.data.sub",req.token.data.sub);
     const urlID = req.token.data.sub;
     db.User
       .findById(urlID, (err, data) => {
@@ -106,7 +106,7 @@ module.exports = {
 
   create: function(req, res) {
     // Create new food item in user profile
-
+    console.log("create data:",req.body);
     // const urlID = req.url.replace("/", "");
     // console.log("Is this the ID??",req.token.data.sub);
     const urlID = req.token.data.sub;
@@ -150,15 +150,36 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Food
+    db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.Food
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
+    console.log("delete req.body:",req.body);
+    console.log("delete req.body:",req.params);
+    db.User
+      .findById(req.params.id, (err, data) => {
+        // console.log("userController.js REMOVE data.inventory",data.inventory);
+        // console.log("req.params.foodID",req.params.foodID);
+        data.inventory.forEach(function(item,index) {
+          // console.log(index+': '+item.item);
+          if (item.item === req.params.foodID) {
+            console.log("Removing item:",item);
+            data.inventory.splice(index, 1);
+          }
+        });
+
+        // data.inventory.find({"item": req.params.foodID}, (err, results) => {
+        //   if (results) {
+        //     console.log("Found inventory item:",results);
+        //   } else {
+        //     console.log("Could not find inventory item, error:",err);
+        //   }
+        // });
+        data.save();
+      })
+      // .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

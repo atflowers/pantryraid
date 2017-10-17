@@ -117,73 +117,51 @@ class User extends Component {
     // this.setState({value: event.target.value});
   };
 
-  // checkExpiration = () => {
-  //   console.log("pages/User/User.js - checkExpiration call was made");
-  //   userData.checkExpiration(this.state.token, this.state.inputItm)
-  //   .then(res => {
-  //     if (res.data.length === 0) {
-  //       console.log("Didn't find any matching foods in the database.");
-  //       return 0;
-  //     } else {
-  //       console.log("Expires:", res.data[0].life);
-  //       return res.data[0].life;
-  //     }
-  //   })
-  //   .catch(err => console.log(err));
-  // }
+  checkExpiration = () => {
+    console.log("pages/User/User.js - checkExpiration call was made");
+    userData.checkExpiration(this.state.token, this.state.inputItm)
+    .then(res => {
+      if (res.data.length === 0) {
+        console.log("Didn't find any matching foods in the database.");
+        return 0;
+      } else {
+        console.log("Expires:", res.data[0].life);
+        return res.data[0].life;
+      }
+    })
+    .catch(err => console.log(err));
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
 
-    if (this.state.inputItm && this.state.inputQty && this.state.inputUOM) {
-      let inputDate = new Date();
-      // Set default for expiration if none entered
-      if (this.state.inputExp === "") {
-        //Check database for expiration information on the entered food item
-        userData.checkExpiration(this.state.token, this.state.inputItm.toLowerCase())
-        .then(res => {
-          if (res.data.length === 0) {
-            console.log("Didn't find any matching foods in the database.");
-            inputDate.setDate(inputDate.getDate() + 7); // adds seven days to today's date as a default
-            console.log("The new date is ", inputDate);
-          } else {
-            console.log("Expires:", res.data[0].life);
-            inputDate.setDate(inputDate.getDate() + res.data[0].life);
-            console.log("The new date is ", inputDate);
-          }
-        })
-        .then( res => {
-          userData.saveFood(this.state.token, {
-            item: this.state.inputItm,
-            category: this.state.inputCat,
-            quantity: this.state.inputQty,
-            units: this.state.inputUOM,
-            expires: inputDate
-          })
-        })
-        .then( res => {
-          // console.log("User.js submit form response: ", res.data.inventory);
-          this.loadUser(this.state.token);
-          // Reset food form
-          this.setState({inputItm: "", inputCat: "", inputQty: "", inputUOM: "", inputExp: ""});
-        })
-        .catch( err => console.log(err));
-
+    let inputDate = new Date();
+    // Set default for expiration if none entered
+    if (this.state.inputExp === "") {
+      let checkExp = this.checkExpiration();
+      console.log("checkExp",checkExp);
+      if (checkExp === 0) {
+        inputDate.setDate(inputDate.getDate() + 7); // adds seven days to today's date
       } else {
-        inputDate = this.state.inputExp.date();
-        // console.log("inputDate",inputDate);
-        let timeNow = new Date();
-        inputDate.add(timeNow.getHours(),"hours");
-        inputDate.add(timeNow.getMinutes(),"minutes");
-        inputDate.add(timeNow.getSeconds(),"seconds");
+        inputDate.setDate(inputDate.getDate() + checkExp);
+      }
+    } else {
+      inputDate = this.state.inputExp.date();
+      // console.log("inputDate",inputDate);
+      let timeNow = new Date();
+      inputDate.add(timeNow.getHours(),"hours");
+      inputDate.add(timeNow.getMinutes(),"minutes");
+      inputDate.add(timeNow.getSeconds(),"seconds");
+    }
 
-        userData.saveFood(this.state.token, {
-          item: this.state.inputItm,
-          category: this.state.inputCat,
-          quantity: this.state.inputQty,
-          units: this.state.inputUOM,
-          expires: inputDate
-        })
+    if (this.state.inputItm && this.state.inputQty && this.state.inputUOM) {
+      userData.saveFood(this.state.token, {
+        item: this.state.inputItm,
+        category: this.state.inputCat,
+        quantity: this.state.inputQty,
+        units: this.state.inputUOM,
+        expires: inputDate
+      })
         .then(res => {
           // console.log("User.js submit form response: ", res.data.inventory);
           this.loadUser(this.state.token);
@@ -191,7 +169,6 @@ class User extends Component {
           this.setState({inputItm: "", inputCat: "", inputQty: "", inputUOM: "", inputExp: ""});
         })
         .catch(err => console.log(err));
-      }
     }
   };
 
@@ -245,7 +222,7 @@ class User extends Component {
             <Row>
               <Col size="md-6">
                 <Jumbotron>
-                  <h1>ADD FOOD</h1>
+                  <h1>Add Food</h1>
                 </Jumbotron>
                 <form className="foodCont">
                   <Input
@@ -287,11 +264,11 @@ class User extends Component {
                     Submit Food
                   </FormBtn>
                 </form>
-                {/* {<button onClick={this.consoleLog}>CONSOLE {this.state.username}</button>} */}
+                {<button onClick={this.consoleLog}>CONSOLE {this.state.username}</button>}
               </Col>
               <Col size="md-6">
                 <Jumbotron>
-                  <h1>IN PANTRY</h1>
+                  <h1>In Pantry</h1>
                 </Jumbotron>
                 <div className="listCont">
                   {this.state.inventory.length ? (
@@ -308,7 +285,7 @@ class User extends Component {
                       ))}
                     </List>
                   ) : (
-                    <h3 className="noResult">No Results to Display</h3>
+                    <h3>No Results to Display</h3>
                   )}
                 </div>
               </Col>

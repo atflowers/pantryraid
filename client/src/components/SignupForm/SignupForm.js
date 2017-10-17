@@ -93,8 +93,7 @@ class SignupForm extends React.Component {
           // console.log("SignupForm userID", response.data);
           localStorage.setItem('userID', response.data.data._id);
           localStorage.setItem('userName', response.data.data.username);
-          console.log("response",response);
-          console.log("localStorage",localStorage);
+          // console.log(response);
       }).then(()=>{
           const token = localStorage.getItem('token');
           // console.log(token);
@@ -147,7 +146,7 @@ class SignupForm extends React.Component {
           error={errors.username}
           label="Username"
           onChange={this.onChange}
-          //checkUserExists={this.checkUserExists}
+          checkUserExists={this.checkUserExists}
           value={this.state.username}
           field="username"
         />
@@ -156,7 +155,7 @@ class SignupForm extends React.Component {
           error={errors.email}
           label="Email"
           onChange={this.onChange}
-          //checkUserExists={this.checkUserExists}
+          checkUserExists={this.checkUserExists}
           value={this.state.email}
           field="email"
         />

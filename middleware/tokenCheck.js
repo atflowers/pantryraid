@@ -11,7 +11,9 @@ const tokenCheck = (req, res, next)=>{
     console.log("You are trying to access a data route!");
     // const authHeader = req.headers.authorization;
     // console.log("req.url: ",req.url);
-    const authHeader = req.url;
+    // console.log("tokenCheck - req.url:",req.url);
+    // console.log("tokenCheck - req.params.token:",req.params.token);
+    const authHeader = req.params.token;
     if (authHeader && authHeader.length > 0) {
         // split the header which should look like:
         // Bearer xxxx.yyy.zzzz

@@ -18,7 +18,7 @@ class Login extends Component {
         <Nav />
         <div className="formbackCont">
           <img className="formbackImg" alt="backgroundImg" src={formback}/>
-      </div>
+        </div>
         <Container fluid>
           <Row>
             <Col size="md-4 md-offset-4">

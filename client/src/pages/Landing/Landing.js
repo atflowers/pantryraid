@@ -35,7 +35,6 @@ class Landing extends Component {
       <div>
         <Nav />
         <Container fluid>
-
           <Row>
             <Col size="md-8">
               <div>
@@ -66,7 +65,6 @@ class Landing extends Component {
                   <p>Pantry Raid will also stop you from rebuying groceries you already have at home, but don't remember having on hand when at the store. You'll also be free from digging through the 
                       fridge or pantry for that recipe item you think you might have, but just aren't sure if its been eaten or tossed out. </p>
                 </div>
-                {/* change button to open modal? */}
                 <form className="btnCont" action={"/Signup/"}>
                   <input className="signUpBtn" type="submit" value="Sign Up" />
                 </form>
@@ -112,7 +110,7 @@ class Landing extends Component {
           <Row>
             <Col size="md-12">
               <div className="footerCont">
-                <p>footer af</p>
+                <p>Copyright Aricka Flowers</p>
               </div>
             </Col>
           </Row>
