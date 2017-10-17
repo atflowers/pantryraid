@@ -242,6 +242,7 @@ class User extends Component {
             <div className="backgroundCont">
               <img className="backgroundImg" alt="backgroundImg" src={background}/>
             </div>
+            <div className="holder"></div>
             <Row>
               <Col size="md-6">
                 <Jumbotron>
