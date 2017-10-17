@@ -51,7 +51,7 @@ body {
     transition: color .3s,border .3s;
     margin: auto;
     display: block;
-    margin-top: 10%;
+    margin-top: 13%;
 }
 
 .signUpBtn:hover, .signUpBtn:hover {
@@ -96,13 +96,6 @@ signUpBtn:active, signUpBtn:hover {
     -moz-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
     box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
 }
-
-/* .bottomCont {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    background-color: #F1F1F1;
-} */
 
 .footerCont {
     height: 100px;

@@ -207,7 +207,7 @@ class User extends Component {
             <Row>
               <Col size="md-6">
                 <Jumbotron>
-                  <h1>Add Food</h1>
+                  <h1>ADD FOOD</h1>
                 </Jumbotron>
                 <form className="foodCont">
                   <Input
@@ -253,7 +253,7 @@ class User extends Component {
               </Col>
               <Col size="md-6">
                 <Jumbotron>
-                  <h1>In Pantry</h1>
+                  <h1>IN PANTRY</h1>
                 </Jumbotron>
                 <div className="listCont">
                   {this.state.inventory.length ? (
@@ -270,7 +270,7 @@ class User extends Component {
                       ))}
                     </List>
                   ) : (
-                    <h3>No Results to Display</h3>
+                    <h3 className="noResult">No Results to Display</h3>
                   )}
                 </div>
               </Col>
