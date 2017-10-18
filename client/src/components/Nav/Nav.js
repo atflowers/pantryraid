@@ -3,7 +3,6 @@ import React from "react";
 import apple from "../../images/apple.png"
 
 const navColor = {backgroundColor: '#F16E10'};
-// const welcomeName = "Joseph";
 
 // const Nav = () =>
 export default class Nav extends React.Component {
