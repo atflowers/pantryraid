@@ -105,7 +105,7 @@ class User extends Component {
           <img className="backgroundImg" alt="backgroundImg" src={background}/>
         </div>
         <Row>
-          <Col size="md-6">
+          <Col size="sm-6">
             <Jumbotron>
               <h1>Add Food</h1>
             </Jumbotron>
@@ -149,7 +149,7 @@ class User extends Component {
             </form>
             <button onClick={this.consoleLog}>CONSOLE Log</button>
           </Col>
-          <Col size="md-6">
+          <Col size="sm-6">
             <Jumbotron>
               <h1>In Pantry</h1>
             </Jumbotron>

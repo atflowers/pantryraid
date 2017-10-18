@@ -1,5 +1,7 @@
 import React from "react";
 
+import apple from "../../images/apple.png"
+
 const navColor = {backgroundColor: '#F16E10'};
 // const welcomeName = "Joseph";
 
@@ -31,6 +33,7 @@ export default class Nav extends React.Component {
                 <span className="icon-bar" /> <span className="icon-bar" />
                 <span className="icon-bar" />
               </button>
+              <img className="logoImg" alt="logo" src={apple}/>
               <a href="/" className="navbar-brand">
                 Pantry Raid
               </a>
@@ -54,13 +57,14 @@ export default class Nav extends React.Component {
                 <span className="icon-bar" /> <span className="icon-bar" />
                 <span className="icon-bar" />
               </button>
+              <img className="logoImg" alt="logo" src={apple}/>
               <a href="/" className="navbar-brand">
                 Pantry Raid
               </a>
             </div>
             <div className="collapse navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
-                <li><a href="/login/">Login</a></li>
+                <li className="rightNavBar"><a href="/login/">Login</a></li>
                 <li><a href="/signup/">Signup</a></li>
               </ul>
             </div>

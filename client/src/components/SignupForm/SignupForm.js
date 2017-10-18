@@ -10,6 +10,8 @@ import TextFieldGroup from '../Form/TextFieldGroup';
 import signUp from '../../utils/signupActions';
 // import flashM from '../../utils/flashMessages';
 
+require("./signUpForm.css");
+
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -139,8 +141,7 @@ class SignupForm extends React.Component {
     }
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <h1>Sign up now and become a pantry raider!</h1>
+      <form className="signUpForm" onSubmit={this.onSubmit}>
 
         <TextFieldGroup
           error={errors.username}
@@ -171,7 +172,7 @@ class SignupForm extends React.Component {
 
         <TextFieldGroup
           error={errors.passwordConfirmation}
-          label="Password Confirmation"
+          label="Confirm Password"
           onChange={this.onChange}
           value={this.state.passwordConfirmation}
           field="passwordConfirmation"

@@ -9,10 +9,29 @@ body {
     -webkit-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
     -moz-box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
     box-shadow: 0px 3px 12px -1px rgba(158,158,158,1);
+    font-family: 'Pragati Narrow', sans-serif;
+    letter-spacing: 2px;
 }
 
 .navbar-inverse {
     border-color: #e0803a !important;
+}
+
+a.navbar-brand:hover {
+    background-color: #e0803a !important; 
+    color: #995528 !important; 
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: #e0803a !important; 
+    color: #995528 !important; 
+}
+
+.logoImg {
+    height: 60px;
+    float: left;
+    margin-left: -14px;
+    margin-top: -4px;
 }
 
 .landingBanner {
@@ -28,6 +47,7 @@ body {
 }
 
 .discrHeader{
+    color: #000000 !important;
     padding-top: 13%;
 }
 

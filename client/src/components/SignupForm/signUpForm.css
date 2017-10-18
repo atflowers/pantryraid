@@ -1,8 +1,8 @@
-.loginForm {
-    margin-top: 27%;
+.signUpForm{
+    margin-top: 16%;
 }
 
-.btn.btn-primary.btn-lrg {
+.btn.btn-primary.btn-lg {
     opacity: 1.0;
     float: none !important;
     margin: auto;
@@ -22,7 +22,7 @@
     width: 30%;
 }
 
-.btn.btn-primary.btn-lrg:hover {
+.btn.btn-primary.btn-lg:hover {
     color: #ffffff;
     border: .2rem solid #729c49;
     background-color: rgba(115, 156, 73, 0.58);

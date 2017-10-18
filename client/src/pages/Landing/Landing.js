@@ -36,12 +36,12 @@ class Landing extends Component {
         <Nav />
         <Container fluid>
           <Row>
-            <Col size="md-8">
+            <Col size="sm-8">
               <div>
                 <img className="landingBanner" alt="landingBanner" src={store}/>
               </div>
             </Col>
-            <Col size="md-4">
+            <Col size="sm-4">
               <div className="bannerText">
                 <h1 className="discrHeader">Track expiration dates</h1>
                 <div className="discrText">
@@ -57,7 +57,7 @@ class Landing extends Component {
           </Row>
           <Row>
             <div className="dropShadow">
-            <Col size="md-4">
+            <Col size="sm-4">
               <div className="bannerText">
                 <h1 className="discrHeader">Save money and time</h1>
                 <div className="discrText">
@@ -70,7 +70,7 @@ class Landing extends Component {
                 </form>
               </div>
             </Col>
-            <Col size="md-8">
+            <Col size="sm-8">
               <div>
                 <img className="landingBanner" alt="landingBanner" src={kitchen}/>
               </div>
@@ -80,7 +80,7 @@ class Landing extends Component {
 
           <Row>
             <div className="bottomCont">
-              <Col size="md-4">
+              <Col size="sm-4">
                 <div className="margin">
                   <img className="circleImage" alt="circleImage Berries" src={berries}/>
                   <div className="miniText">
@@ -88,7 +88,7 @@ class Landing extends Component {
                   </div>
                 </div>
               </Col>
-              <Col size="md-4">
+              <Col size="sm-4">
                 <div className="margin">
                   <img className="circleImage" alt="circleImage Asparagus" src={asparagus}/>
                   <div className="miniText">
@@ -96,7 +96,7 @@ class Landing extends Component {
                   </div>
                 </div>
               </Col>
-              <Col size="md-4">
+              <Col size="sm-4">
                 <div className="margin">
                   <img className="circleImage" alt="circleImage Oranges" src={oranges}/>
                   <div className="miniText">
@@ -108,9 +108,10 @@ class Landing extends Component {
           </Row>
 
           <Row>
-            <Col size="md-12">
+            <Col size="sm-12">
               <div className="footerCont">
-                <p>Copyright Aricka Flowers</p>
+                <br/><br/>
+                <p>&copy; 2017 Aricka Flowers</p>
               </div>
             </Col>
           </Row>
