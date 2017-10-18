@@ -18,7 +18,7 @@ class SignupPage extends React.Component {
           <img className="formbackImg" alt="backgroundImg" src={formback}/>
         </div>
         <div className="row" id="rowId">
-          <div className="col-md-4 col-md-offset-4">
+          <div className="col-sm-4 col-sm-offset-4">
             <SignupForm />
           </div>
         </div>

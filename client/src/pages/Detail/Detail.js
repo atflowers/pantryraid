@@ -20,7 +20,7 @@ class Detail extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="sm-12">
             <Jumbotron>
               <h1>
                 {this.state.food.item} of type {this.state.food.category}
@@ -29,7 +29,7 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+          <Col size="sm-10 sm-offset-1">
             <article>
               <h1>Details</h1>
               <p>
@@ -39,7 +39,7 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-2">
+          <Col size="sm-2">
             <Link to="/">← Back to List</Link>
           </Col>
         </Row>

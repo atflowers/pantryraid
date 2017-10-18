@@ -27,7 +27,7 @@ class Landing extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="sm-12">
             <Jumbotron>
               <h1>You're not authorized to be here!</h1>
             </Jumbotron>

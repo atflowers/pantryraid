@@ -244,7 +244,7 @@ class User extends Component {
             </div>
             <div className="holder"></div>
             <Row>
-              <Col size="md-6">
+              <Col size="sm-6">
                 <Jumbotron>
                   <h1>ADD FOOD</h1>
                 </Jumbotron>
@@ -290,7 +290,7 @@ class User extends Component {
                 </form>
                 {/* {<button onClick={this.consoleLog}>CONSOLE {this.state.username}</button>} */}
               </Col>
-              <Col size="md-6">
+              <Col size="sm-6">
                 <Jumbotron>
                   <h1>IN PANTRY</h1>
                 </Jumbotron>

@@ -21,7 +21,7 @@ class Login extends Component {
         </div>
         <Container fluid>
           <Row>
-            <Col size="md-4 md-offset-4">
+            <Col size="sm-4 sm-offset-4">
               <LoginForm />
             </Col>
           </Row>

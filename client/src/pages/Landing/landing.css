@@ -17,6 +17,23 @@ body {
     border-color: #e0803a !important;
 }
 
+a.navbar-brand:hover {
+    background-color: #e0803a !important; 
+    color: #995528 !important; 
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: #e0803a !important; 
+    color: #995528 !important; 
+}
+
+.logoImg {
+    height: 60px;
+    float: left;
+    margin-left: -14px;
+    margin-top: -4px;
+}
+
 .landingBanner {
     width: 100%;
 }
@@ -30,6 +47,7 @@ body {
 }
 
 .discrHeader{
+    color: #000000 !important;
     padding-top: 13%;
 }
 

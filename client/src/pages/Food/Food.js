@@ -68,7 +68,7 @@ class Food extends Component {
           <img className="backgroundImg" alt="backgroundImg" src={background}/>
         </div>
         <Row>
-          <Col size="md-6">
+          <Col size="sm-6">
             <Jumbotron>
               <h1>ADD FOOD</h1>
             </Jumbotron>
@@ -111,7 +111,7 @@ class Food extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6">
+          <Col size="sm-6">
             <Jumbotron>
               <h1>IN PANTRY</h1>
             </Jumbotron>

@@ -8,7 +8,7 @@ const NoMatch = () =>
     <Nav />
     <Container fluid>
       <Row>
-        <Col size="md-12">
+        <Col size="sm-12">
           <Jumbotron>
             <h1>404 Page Not Found</h1>
             <h1>
