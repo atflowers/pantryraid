@@ -245,72 +245,76 @@ class User extends Component {
             <div className="holder"></div>
             <Row>
               <Col size="sm-6">
-                <Jumbotron>
-                  <h1>ADD FOOD</h1>
-                </Jumbotron>
-                <form className="foodCont">
-                  <Input
-                    value={this.state.inputItm}
-                    onChange={this.handleInputChange}
-                    name="inputItm"
-                    placeholder="Food Item (Required)"
-                  />
-                  <Input
-                    value={this.state.inputCat}
-                    onChange={this.handleInputChange}
-                    name="inputCat"
-                    placeholder="Food category (Optional)"
-                  />
-                  <Input
-                    value={this.state.inputQty}
-                    onChange={this.handleInputChange}
-                    name="inputQty"
-                    placeholder="Quantity (Required)"
-                  />
-                  <Input
-                    value={this.state.inputUOM}
-                    onChange={this.handleInputChange}
-                    name="inputUOM"
-                    placeholder="Unit of Measurement (Required)"
-                  />
-                  <Input
-                    onFocus={this.typeToDate}
-                    onBlur={this.typeToText}
-                    value={this.state.inputExp}
-                    onChange={this.handleInputChange}
-                    name="inputExp"
-                    placeholder="Expires (Optional)"
-                  />
-                  <FormBtn
-                    disabled={!(this.state.inputItm && this.state.inputQty && this.state.inputUOM)}
-                    onClick={this.handleFormSubmit}
-                  >
-                    Submit Food
-                  </FormBtn>
-                </form>
-                {/* {<button onClick={this.consoleLog}>CONSOLE {this.state.username}</button>} */}
+                <div className="boxShadow">
+                  <Jumbotron>
+                    <h1>ADD FOOD</h1>
+                  </Jumbotron>
+                  <form className="foodCont">
+                    <Input
+                      value={this.state.inputItm}
+                      onChange={this.handleInputChange}
+                      name="inputItm"
+                      placeholder="Food Item (Required)"
+                    />
+                    <Input
+                      value={this.state.inputCat}
+                      onChange={this.handleInputChange}
+                      name="inputCat"
+                      placeholder="Food category (Optional)"
+                    />
+                    <Input
+                      value={this.state.inputQty}
+                      onChange={this.handleInputChange}
+                      name="inputQty"
+                      placeholder="Quantity (Required)"
+                    />
+                    <Input
+                      value={this.state.inputUOM}
+                      onChange={this.handleInputChange}
+                      name="inputUOM"
+                      placeholder="Unit of Measurement (Required)"
+                    />
+                    <Input
+                      onFocus={this.typeToDate}
+                      onBlur={this.typeToText}
+                      value={this.state.inputExp}
+                      onChange={this.handleInputChange}
+                      name="inputExp"
+                      placeholder="Expires (Optional)"
+                    />
+                    <FormBtn
+                      disabled={!(this.state.inputItm && this.state.inputQty && this.state.inputUOM)}
+                      onClick={this.handleFormSubmit}
+                    >
+                      Submit Food
+                    </FormBtn>
+                  </form>
+                  {/* {<button onClick={this.consoleLog}>CONSOLE {this.state.username}</button>} */}
+                </div>
               </Col>
               <Col size="sm-6">
-                <Jumbotron>
-                  <h1>IN PANTRY</h1>
-                </Jumbotron>
-                <div className="listCont">
-                  {this.state.inventory.length ? (
-                    <List>
-                      {this.state.inventory.map(food => (
-                        <ListItem key={food.item}>
-                          <Link to={"/food/" + food.item}>
-                            <strong>
-                              {food.item} in the amount of {food.quantity} {food.units}, expires on {food.expires}
-                            </strong>
-                          </Link>
-                          <DeleteBtn onClick={() => this.deleteFood(food.item)} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  ) : (
-                    <h3 className="noResult">No Results to Display</h3>
-                  )}
+                <div className="boxShadow">
+                  <Jumbotron>
+                    <h1>IN PANTRY</h1>
+                  </Jumbotron>
+                  <div className="listCont">
+                    {this.state.inventory.length ? (
+                      <List>
+                        {this.state.inventory.map(food => (
+                          <ListItem key={food.item}>
+                            <Link to={"/food/" + food.item}>
+                              <strong>
+                                {food.item} in the amount of {food.quantity} {food.units}, expires on {food.expires}
+                              </strong>
+                            </Link>
+                            <DeleteBtn onClick={() => this.deleteFood(food.item)} />
+                          </ListItem>
+                        ))}
+                      </List>
+                    ) : (
+                      <h3 className="noResult">No Results to Display</h3>
+                    )}
+                  </div>
                 </div>
               </Col>
             </Row>
